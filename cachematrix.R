@@ -1,7 +1,9 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
+## Set clears the cached data and resets stored matrix to new matrix
+## Get retrieves the stored matrix
+## Setsolve uses solve to store the inverse of the matrix to the cache
+## Getsolve retrieves cached values of the matrix inversion
+## The list creates labels for set, get, setsolve and getsolve to allow
+## for referencing using $
 
 makeCacheMatrix <- function(x = matrix()) {
         m <- NULL
@@ -18,7 +20,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## The following checks whether or not the cache contains
+## relevant data and if so, retrieves it. Otherwise it
+## solves the matrix inversion and fills the cache with it.
 
 cacheSolve <- function(x, ...) {
         m <- x$getsolve()
@@ -30,5 +34,5 @@ cacheSolve <- function(x, ...) {
         m <- solve(data, ...)
         x$setsolve(m)
         m
-        ## Return a matrix that is the inverse of 'x'
+
 }
